@@ -37,7 +37,7 @@ class Tweets extends Component {
                                     if (media.type === "photo") {
                                         return (
                                             <div className="tweet-image" style={{ height: media.sizes.medium.h, width: media.sizes.medium.w }} key={key}>
-                                                <img src={media.media_url} height={media.sizes.medium.h} width={media.sizes.medium.w} alt="" />
+                                                <img src={media.media_url} style={{ height: media.sizes.medium.h, width: media.sizes.medium.w }} alt="" />
                                             </div>
                                         );
                                     }
@@ -45,7 +45,7 @@ class Tweets extends Component {
                                         let videoSource = media.video_info.variants.length && media.video_info.variants.find(video => video.content_type === "video/mp4")
                                         return (
                                             <div className="tweet-video" style={{ height: media.sizes.medium.h, width: media.sizes.medium.w }} key={key}>
-                                                <video height={media.sizes.medium.h} width={media.sizes.medium.w} controls>
+                                                <video style={{ height: media.sizes.medium.h, width: media.sizes.medium.w }} controls>
                                                     <source src={videoSource.url} type={videoSource.content_type} />
                                                 </video>
                                             </div>
