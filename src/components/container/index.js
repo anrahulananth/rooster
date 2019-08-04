@@ -18,7 +18,7 @@ class TweetsContainer extends Component {
         return (
             <Container className="tweetsContainer">
                 {
-                    tweets.length ? tweets.map((tweet, key) => (<Tweets key={key} tweet={tweet}></Tweets>)) : <div className="no-tweets">No Tweets found for query {q}</div>
+                    tweets.length ? tweets.map((tweet, key) => (<Tweets key={key} tweet={tweet}></Tweets>)) : q.length >= 3 ? <div className="no-tweets">No Tweets found for query {q}</div> : ''
                 }
                 {
                     tweets.length >= 10 && !isLoading ? <Button variant="primary" size="lg" block onClick={this.handleClick}>Load More</Button> : ''

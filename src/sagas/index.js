@@ -23,7 +23,7 @@ const rootSaga = function* rootSaga () {
 };
 
 const fetchTweetsData = (start, limit, q) => {
-    let reqURL = `https://roosterfakeapi.herokuapp.com//tweets?${q && q !== '' ? `&q=${q}&` : ''}_start=${start}&_limit=${limit}`;
+    let reqURL = `https://roosterfakeapi.herokuapp.com/tweets?${q && q !== '' ? `&q=${q}&` : ''}_start=${start}&_limit=${limit}`;
     return axios.get(reqURL).then(response => {
         return response.data;
     });
