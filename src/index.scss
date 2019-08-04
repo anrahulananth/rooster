@@ -78,32 +78,28 @@ code {
     .description .highlighted {
       color: $blueColor;
     }
-    .tweet-image {
-      background-color: $placeholderColor;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      max-width: 100%;
-      height: auto;
-      min-height: 100px;
-      img {
-        border-radius: 10px;
-        max-width: 100%;
-        height: auto;
-        min-height: 100px;
+    .media {
+      .tweet-image {
+        margin-right: 1rem;
+        img {
+          background-color: $placeholderColor;
+          border-radius: 10px;
+          max-width: 100%;
+          height: auto;
+          min-width: 100px;
+          min-height: 100px;
+        }
       }
-    }
-    .tweet-video {
-      background-color: $placeholderColor;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      max-width: 100%;
-      height: auto;
-      min-height: 100px;
-      video {
-        border-radius: 10px;
-        max-width: 100%;
-        height: auto;
-        min-height: 100px;
+      .tweet-video {
+        margin-right: 1rem;
+        video {
+          background-color: $placeholderColor;
+          border-radius: 10px;
+          max-width: 100%;
+          height: auto;
+          min-width: 100px;
+          min-height: 100px;
+        }
       }
     }
     .level-left .level-item {

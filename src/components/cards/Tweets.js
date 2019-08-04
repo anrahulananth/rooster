@@ -32,28 +32,34 @@ class Tweets extends Component {
                             ) : ''
                         }
                         {
-                            extended_entities && extended_entities.media && extended_entities.media.length ? extended_entities.media.map((media, key) => {
-                                if (media) {
-                                    if (media.type === "photo") {
-                                        return (
-                                            <div className="tweet-image"  key={key}>
-                                                <img src={media.media_url} alt="" />
-                                            </div>
-                                        );
+                            extended_entities && extended_entities.media && extended_entities.media.length ? (
+                                <div className="media">
+                                    {
+                                        extended_entities.media.map((media, key) => {
+                                            if (media) {
+                                                if (media.type === "photo") {
+                                                    return (
+                                                        <div className="tweet-image" key={key}>
+                                                            <img src={media.media_url} alt="" />
+                                                        </div>
+                                                    );
+                                                }
+                                                if (media.type === "video") {
+                                                    let videoSource = media.video_info.variants.length && media.video_info.variants.find(video => video.content_type === "video/mp4")
+                                                    return (
+                                                        <div className="tweet-video" key={key}>
+                                                            <video controls>
+                                                                <source src={videoSource.url} type={videoSource.content_type} />
+                                                            </video>
+                                                        </div>
+                                                    );
+                                                }
+                                            }
+                                            return '';
+                                        })
                                     }
-                                    if (media.type === "video") {
-                                        let videoSource = media.video_info.variants.length && media.video_info.variants.find(video => video.content_type === "video/mp4")
-                                        return (
-                                            <div className="tweet-video" key={key}>
-                                                <video controls>
-                                                    <source src={videoSource.url} type={videoSource.content_type} />
-                                                </video>
-                                            </div>
-                                        );
-                                    }
-                                }
-                                return '';
-                            }) : ''
+                                </div>                 
+                            ) : ''
                         }
                         <nav className="level">
                             <div className="level-left">
