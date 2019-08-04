@@ -36,16 +36,16 @@ class Tweets extends Component {
                                 if (media) {
                                     if (media.type === "photo") {
                                         return (
-                                            <div className="tweet-image" style={{ height: media.sizes.medium.h, width: media.sizes.medium.w }} key={key}>
-                                                <img src={media.media_url} style={{ height: media.sizes.medium.h, width: media.sizes.medium.w }} alt="" />
+                                            <div className="tweet-image"  key={key}>
+                                                <img src={media.media_url} alt="" />
                                             </div>
                                         );
                                     }
                                     if (media.type === "video") {
                                         let videoSource = media.video_info.variants.length && media.video_info.variants.find(video => video.content_type === "video/mp4")
                                         return (
-                                            <div className="tweet-video" style={{ height: media.sizes.medium.h, width: media.sizes.medium.w }} key={key}>
-                                                <video style={{ height: media.sizes.medium.h, width: media.sizes.medium.w }} controls>
+                                            <div className="tweet-video" key={key}>
+                                                <video controls>
                                                     <source src={videoSource.url} type={videoSource.content_type} />
                                                 </video>
                                             </div>
