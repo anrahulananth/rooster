@@ -1,5 +1,5 @@
 # Rooster
- &#xe52e; Rooster - A Twitter Clone
+&#x1F414; Rooster - A Twitter Clone
  
  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
